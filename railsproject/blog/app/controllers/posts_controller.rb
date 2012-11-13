@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class PostsController < ApplicationController
 
   def index
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, notice: '作成されました!'
     else
       render action: 'new'
     end
