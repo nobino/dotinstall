@@ -1,8 +1,14 @@
 # define a method
 
-def sing(word = "la") #args with a default value
-  puts word + word + word + "~"
+def sing(word = "la", num)
+  s = ""
+  for i in 1..num do
+    s += word
+  end
+  s += "~"
+  return s
 end
 
-sing()
-sing("hu")
+res = sing("hu", 10)
+
+puts res
