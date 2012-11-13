@@ -2,12 +2,19 @@
 
 class Monster # start with upper-case
   def initialize # constructor in Java
-    @name = name
+    @name = name # instance var starts with @
     @hp = 100 + rand(100)
+    printf("%s appeared. His hp is %d\n", @name, @hp)
   end
 
   def damege
     @hp -= 10 + rand(10)
+    printf("%s's hp is now %d\n", @name, @hp)
+    printf("%s is now dead!\n", @name) if @hp < 0
+  end
+
+  def heal
+    @hp += 10 + rand(10)
     printf("%s's hp is now %d\n", @name, @hp)
   end
 end
