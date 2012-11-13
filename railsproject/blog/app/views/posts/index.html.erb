@@ -3,6 +3,11 @@
 <ul>
 <% # comment %>
 <% @posts.each do |post| %>
-<li><%= post.title %></li>
+<li>
+  <%= link_to post.title, post_path(post) %>
+  <%= link_to 'Edit', edit_post_path(post)%>
+</li>
 <% end %>
 </ul>
+
+<%= link_to 'home', posts_path %> | <%= link_to 'New', new_post_path %>
