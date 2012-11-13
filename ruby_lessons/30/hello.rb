@@ -18,3 +18,10 @@ class Monster # start with upper-case
     printf("%s's hp is now %d\n", @name, @hp)
   end
 end
+
+
+slime = Monster.new("slime")  #call initialize
+slime.damage
+slime.damage
+
+mummy = Monster.new("mummy")
