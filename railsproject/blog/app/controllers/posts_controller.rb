@@ -12,4 +12,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @post = Post.new(param[:post])
+    if @post.save
+      redirect_to posts_path
+    else
+      render action: 'new'
+    end
+  end
+
 end
