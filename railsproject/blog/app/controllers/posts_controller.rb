@@ -3,7 +3,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all  # instance var is accessible from view
+    # instance var is accessible from view
+    @posts = Post.all(:order => "created_at DESC")
   end
 
   def show
