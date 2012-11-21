@@ -6,7 +6,12 @@
 <ul>
   <% if @post.comments.any? %>
     <% @post.comments.each do |comment| %>
-    <li><%= comment.body  %> (by <%= comment.commenter %>)</li>
+    <li id="comment_<%= comment.id %>">
+      <%= comment.body  %> (by <%= comment.commenter %>)
+      <%= link_to 'delete', [comment.post, comment], :confirm => 'Sure?',
+                                                     :method => :delete,
+                                                     :remote => true %>
+    </li>
     <% end %>
   <% else %>
     <li>no comment yer.</li>
@@ -41,3 +46,12 @@
 <% end %>
 
 <%= link_to 'home', posts_path %>
+
+<script>
+$(function () {
+  $('a[data-method="delete"]').live('ajax:success',
+    function(e ,data, status, xhr){
+      $('#comment_' + data.comment.id).fadeOut('slow');
+  });
+});
+</script>
