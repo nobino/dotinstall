@@ -8,9 +8,13 @@ class Person(object):
     def greet(self):
         print 'my name is %s' % self.name
 
+class SuperPerson(Person):
+    def shout(self):
+        print "%s is SUPER!" % self.name
+
 bob = Person('Bob')
 print bob.name
 bob.greet()
 
-tom = Person('Tom')
-tom.greet()
+tom = SuperPerson('Tom')
+tom.shout()
