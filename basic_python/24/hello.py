@@ -1,9 +1,19 @@
 # coding: utf-8
 # function
+# param
+#  - named
+# return
 
-def hello(name, num):
-    print 'hello! %s. '  % name * num
+def hello(name, num = 1):
+    return 'hello! %s. '  % name * num
 
-hello('Tom', 2)
+s1 = hello(name='Tom')
+s2 = hello(num=2, name='Steve')
 
-hello('Steve', 3)
+print s1
+print s2
+
+def hello2():
+    pass
+
+hello2()
