@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tooltip</h1>
+        <p>this is a <a href="#" rel="tooltip" data-original-title="補足情報">tooltip</a>.</p>
+        <p>this is a <a href="#" rel="popover" data-original-title="補足情報" data-content="もっと詳しい情報">popover</a>.</p>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('a[rel=tooltip]').tooltip({placement: 'bottom'});
+        $('a[rel=popover]').popover();
+      });</script>
+  </body>
+</html>
